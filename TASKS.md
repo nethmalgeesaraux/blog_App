@@ -2,7 +2,7 @@
 
 ## 🚀 Project Setup
 
-* [x] Initialize Next.js 15 project
+* [x] Initialize Next.js 16 project
 * [x] Configure TypeScript
 * [x] Install Tailwind CSS
 * [x] Setup Shadcn UI
