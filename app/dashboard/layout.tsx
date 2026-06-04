@@ -2,6 +2,28 @@ import { ReactNode } from "react";
 import Link from "next/link";
 import Logo from "@/public/logo.png";
 import Image from "next/image";
+import { DashboardItems } from "../components/DashboardItems";
+import { Globe, Home, DollarSign} from "lucide-react";
+
+export const navLinks = [
+  {
+    name: "Dashboard",
+    href: "/dashboard",
+    icon: Home,
+  },
+  {
+    name: "Sites",
+    href: "/dashboard/sites",
+    icon: Globe,
+  },
+  {
+  name: "Pricing",
+  href: "/dashboard/pricing",
+  icon: DollarSign,
+}
+
+];
+
 
 export default function DashboardLayout({ children }: { children: ReactNode }) {
     return (
@@ -20,6 +42,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
                     <div className="flex-1">
                         <nav className="grid items-start px-2 font-medium lg:px-4">
                             {/* navigation links go here */}
+                            <DashboardItems />
                         </nav>
                     </div>
 
