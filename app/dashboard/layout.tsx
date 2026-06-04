@@ -3,51 +3,50 @@ import Link from "next/link";
 import Logo from "@/public/logo.png";
 import Image from "next/image";
 import { DashboardItems } from "../components/DashboardItems";
-import { Globe, Home, DollarSign} from "lucide-react";
-
-export const navLinks = [
-  {
-    name: "Dashboard",
-    href: "/dashboard",
-    icon: Home,
-  },
-  {
-    name: "Sites",
-    href: "/dashboard/sites",
-    icon: Globe,
-  },
-  {
-  name: "Pricing",
-  href: "/dashboard/pricing",
-  icon: DollarSign,
-}
-
-];
+import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
+import { Button } from "@/components/ui/button";
+import { LogOut } from "lucide-react";
 
 
 export default function DashboardLayout({ children }: { children: ReactNode }) {
     return (
-        <section className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
-            <div className="hidden border-r bg-muted/40 md:block">
-                <div className="flex h-full max-h-screen flex-col gap-2">
-                    <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
-                        <Link href="/" className="flex items-center gap-2 font-semibold">
+        <section className="grid min-h-screen w-full bg-white text-slate-950 md:grid-cols-[280px_1fr]">
+            <aside className="hidden border-r border-slate-200 bg-slate-50 md:block">
+                <div className="flex h-screen flex-col">
+                    <div className="flex h-16 items-center border-b border-slate-200 px-4">
+                        <Link href="/" className="flex items-center gap-2 font-bold">
                             <Image src={Logo} alt="Logo" className="size-8" />
-                            <h3 className="text-2xl">
-                                Blog<span className="text-primary">-Marshal</span>
+                            <h3 className="text-3xl tracking-tight">
+                                Blog<span className="text-blue-600">-Marshal</span>
                             </h3>
                         </Link>
                     </div>
 
-                    <div className="flex-1">
-                        <nav className="grid items-start px-2 font-medium lg:px-4">
-                            {/* navigation links go here */}
+                    <div className="flex-1 px-3 py-3">
+                        <nav className="grid items-start gap-1">
                             <DashboardItems />
                         </nav>
                     </div>
 
                 </div>
-            </div>
+            </aside>
+            <main className="flex min-h-screen flex-col">
+                <header className="flex h-16 items-center justify-between border-b border-slate-200 bg-white px-6">
+                    <div />
+                    <div className="flex items-center gap-3">
+                        {/* <span className="text-sm font-bold text-slate-950">yooo</span> */}
+                        <LogoutLink>
+                            <Button variant="outline" size="sm" className="gap-2 border-slate-200">
+                                <LogOut className="size-4" />
+                                Logout
+                            </Button>
+                        </LogoutLink>
+                    </div>
+                </header>
+                <div className="flex-1 bg-white p-6">
+                    {children}
+                </div>
+            </main>
         </section>
 
     );
