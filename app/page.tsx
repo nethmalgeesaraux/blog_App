@@ -17,10 +17,10 @@ export default async function Home() {
       ) : (
         <>
           <LoginLink>
-            <Button variant="outline">Sign in</Button>
+            <Button variant="outline">login</Button>
           </LoginLink>
           <RegisterLink>
-            <Button variant="outline">Sign up</Button>
+            <Button variant="outline">Register</Button>
           </RegisterLink>
         </>
       )}
