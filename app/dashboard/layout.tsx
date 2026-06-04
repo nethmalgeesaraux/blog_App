@@ -6,6 +6,7 @@ import { DashboardItems } from "../components/DashboardItems";
 import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { Button } from "@/components/ui/button";
 import { LogOut } from "lucide-react";
+import { ThemToggle } from "../components/ThemToggle";
 
 
 export default function DashboardLayout({ children }: { children: ReactNode }) {
@@ -30,11 +31,10 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
 
                 </div>
             </aside>
-            <main className="flex min-h-screen flex-col">
-                <header className="flex h-16 items-center justify-between border-b border-slate-200 bg-white px-6">
-                    <div />
-                    <div className="flex items-center gap-3">
-                        {/* <span className="text-sm font-bold text-slate-950">yooo</span> */}
+            <main className="flex min-h-screen flex-col overflow-visible">
+                <header className="relative z-50 h-16 overflow-visible border-b border-slate-200 bg-white px-6">
+                    <div className="absolute right-6 top-3 flex items-center gap-2 overflow-visible">
+                        <ThemToggle />
                         <LogoutLink>
                             <Button variant="outline" size="sm" className="gap-2 border-slate-200">
                                 <LogOut className="size-4" />
