@@ -6,13 +6,13 @@
 * [x] Configure TypeScript
 * [x] Install Tailwind CSS
 * [x] Setup Shadcn UI
-* [ ] Configure environment variables
+* [x] Configure environment variables
 
 ## 🔐 Authentication
 
-* [ ] Setup Kinde Authentication
-* [ ] Configure Multi-Factor Authentication (MFA)
-* [ ] Implement Passwordless Authentication
+* [x] Setup Kinde Authentication
+* [x] Configure Multi-Factor Authentication (MFA)
+* [x] Implement Passwordless Authentication
 * [ ] Add Google OAuth Login
 * [ ] Add GitHub OAuth Login
 * [ ] Create protected routes

@@ -24,3 +24,18 @@
 -Project foundation has been established successfully. Authentication setup and dependency  resolution will be prioritized in the next development session.
 - Will continue to resolve the React and Next.js version conflicts and then proceed with the setup of Kinde Authentication and MFA.
 
+
+
+### Day 2: Thursday, June 04
+
+**Completed:**
+
+
+**Next Steps:**
+
+
+**Challenges:**
+
+
+**Status:** 
+
