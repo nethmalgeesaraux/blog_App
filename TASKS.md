@@ -19,12 +19,12 @@
 
 ## 💿 Database
 
-* [ ] Create Supabase project
-* [ ] Configure PostgreSQL database
-* [ ] Install and configure Prisma ORM
-* [ ] Create database schema
-* [ ] Run initial migrations
-* [ ] Seed development data
+* [x] Create Supabase project
+* [x] Configure PostgreSQL database
+* [x] Install and configure Prisma ORM
+* [x] Create database schema
+* [x] Run initial migrations
+* [x] Seed development data
 
 ## 💰 Payments
 
