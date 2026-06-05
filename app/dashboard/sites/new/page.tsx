@@ -4,6 +4,7 @@ import {
     CardHeader,
     CardTitle,
     CardContent,
+    CardFooter,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -42,15 +43,16 @@ export default function NewSiteRoute() {
                         <div className="grid gap-2">
                             <Label>Description</Label>
                             <Textarea placeholder="Small Description for your site" />
-                            <br />
-                            <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-                                Send message
-                            </Button>
                         </div>
-
-
                     </div>
                 </CardContent>
+                <CardFooter>
+                    <div>
+                        <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+                            Submit
+                        </Button>
+                    </div>
+                </CardFooter>
 
             </Card>
         </div>
