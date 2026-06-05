@@ -13,9 +13,9 @@
 * [x] Setup Kinde Authentication
 * [x] Configure Multi-Factor Authentication (MFA)
 * [x] Implement Passwordless Authentication
-* [ ] Add Google OAuth Login
-* [ ] Add GitHub OAuth Login
-* [ ] Create protected routes
+* [x] Add Google OAuth Login
+* [x] Add GitHub OAuth Login
+* [x] Create protected routes
 
 ## 💿 Database
 
@@ -53,11 +53,11 @@
 ## 🎨 User Interface
 
 * [ ] Create landing page
-* [ ] Design dashboard layout
+* [x] Design dashboard layout
 * [ ] Build authentication pages
 * [ ] Create account settings page
 * [ ] Add loading states
-* [ ] Add error handling pages
+* [x] Add error handling pages
 * [ ] Improve mobile responsiveness
 
 ## 🧪 Testing
@@ -78,6 +78,6 @@
 ## 📚 Documentation
 
 * [x] Create README.md
-* [ ] Add installation guide
-* [ ] Document API routes
+* [x] Add installation guide
+* [x] Document API routes
 * [ ] Create deployment guide

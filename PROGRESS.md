@@ -29,13 +29,41 @@
 ### Day 2: Thursday, June 04
 
 **Completed:**
-
+- Resolved React and Next.js version conflicts
+- Configured environment variables
+- Setup Kinde Authentication
+- Configured Multi-Factor Authentication (MFA)
 
 **Next Steps:**
-
+- Implement user registration and login functionality
+- Setup email verification
+- Implement password reset functionality
 
 **Challenges:**
-
+- None
 
 **Status:** 
+- Authentication and MFA setup is complete.
+
+
+
+### Day 3: Friday, June 05
+
+**Completed:**
+- Implemented user registration and login functionality
+- Setup email verification
+- Implemented password reset functionality
+- Dashboard page setup
+
+**Next Steps:**
+- Implement user profile management
+- Setup user roles and permissions
+- Implement data protection and privacy features
+
+**Challenges:**
+- None
+
+**Status:** 
+- Authentication and user management features are complete.
+
 

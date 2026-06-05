@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import { LogOut } from "lucide-react";
 import { ThemToggle } from "../components/ThemToggle";
 
-
 export default function DashboardLayout({ children }: { children: ReactNode }) {
     return (
         <section className="grid min-h-screen w-full bg-white text-slate-950 md:grid-cols-[280px_1fr]">
@@ -35,6 +34,19 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
                 <header className="relative z-50 h-16 overflow-visible border-b border-slate-200 bg-white px-6">
                     <div className="absolute right-6 top-3 flex items-center gap-2 overflow-visible">
                         <ThemToggle />
+
+                        {/* <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                                <Button
+                                    variant="secondary"
+                                    size="icon"
+                                    className="rounded-full"
+                                >
+                                    <CircleUser className="h-5 w-5" />
+                                </Button>
+                            </DropdownMenuTrigger>
+                        </DropdownMenu> */}
+
                         <LogoutLink>
                             <Button variant="outline" size="sm" className="gap-2 border-slate-200">
                                 <LogOut className="size-4" />
