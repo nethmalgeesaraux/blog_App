@@ -10,7 +10,7 @@ import { ThemToggle } from "../components/ThemToggle";
 
 export default function DashboardLayout({ children }: { children: ReactNode }) {
     return (
-        <section className="grid min-h-screen w-full bg-white text-slate-950 md:grid-cols-[280px_1fr]">
+        <section className="grid h-screen w-full overflow-hidden bg-white text-slate-950 md:grid-cols-[280px_1fr]">
             <aside className="hidden border-r border-slate-200 bg-slate-50 md:block">
                 <div className="flex h-screen flex-col">
                     <div className="flex h-16 items-center border-b border-slate-200 px-4">
@@ -30,8 +30,8 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
 
                 </div>
             </aside>
-            <main className="flex min-h-screen flex-col overflow-visible">
-                <header className="relative z-50 h-16 overflow-visible border-b border-slate-200 bg-white px-6">
+            <main className="flex min-h-0 flex-col overflow-hidden">
+                <header className="relative z-50 h-16 shrink-0 overflow-visible border-b border-slate-200 bg-white px-6">
                     <div className="absolute right-6 top-3 flex items-center gap-2 overflow-visible">
                         <ThemToggle />
 
@@ -55,7 +55,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
                         </LogoutLink>
                     </div>
                 </header>
-                <div className="flex-1 bg-white p-6">
+                <div className="flex-1 overflow-y-auto bg-white p-6">
                     {children}
                 </div>
             </main>
