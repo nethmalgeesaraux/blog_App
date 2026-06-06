@@ -110,6 +110,7 @@ export async function CreateArticleAction(_prevState: any, formData: FormData) {
             image: submission.value.image || "/logo.png",
             articleContent: submission.value.articleContent,
             slug: `${baseSlug}-${Date.now().toString(36)}`,
+            published: submission.value.published,
             userId: user.id,
             siteId: site.id,
         },
@@ -117,6 +118,7 @@ export async function CreateArticleAction(_prevState: any, formData: FormData) {
 
     revalidatePath(`/dashboard/sites/${site.id}`);
     revalidatePath(`/dashboard/sites/${site.id}/blog`);
+    revalidatePath("/dashboard");
 
     return redirect(`/dashboard/sites/${site.id}`);
 }
@@ -168,12 +170,58 @@ export async function UpdateArticleAction(_prevState: any, formData: FormData) {
             image: submission.value.image || "/logo.png",
             articleContent: submission.value.articleContent,
             slug: `${baseSlug}-${Date.now().toString(36)}`,
+            published: submission.value.published,
             updatedAt: new Date(),
         },
     });
 
     revalidatePath(`/dashboard/sites/${post.siteId}`);
     revalidatePath(`/dashboard/sites/${post.siteId}/blog`);
+    revalidatePath("/dashboard");
+
+    return redirect(`/dashboard/sites/${post.siteId}`);
+}
+
+export async function ToggleArticlePublishAction(formData: FormData) {
+    const { getUser } = getKindeServerSession();
+    const user = await getUser();
+    const siteId = String(formData.get("siteId") ?? "");
+    const articleId = String(formData.get("articleId") ?? "");
+    const published = String(formData.get("published") ?? "") === "true";
+
+    if (!user) {
+        return redirect("/api/auth/login");
+    }
+
+    const post = await prisma.post.findFirst({
+        where: {
+            id: articleId,
+            siteId,
+            userId: user.id,
+        },
+        select: {
+            id: true,
+            siteId: true,
+        },
+    });
+
+    if (!post || !post.siteId) {
+        return redirect("/dashboard/sites");
+    }
+
+    await prisma.post.update({
+        where: {
+            id: post.id,
+        },
+        data: {
+            published,
+            updatedAt: new Date(),
+        },
+    });
+
+    revalidatePath(`/dashboard/sites/${post.siteId}`);
+    revalidatePath(`/dashboard/sites/${post.siteId}/blog`);
+    revalidatePath("/dashboard");
 
     return redirect(`/dashboard/sites/${post.siteId}`);
 }
@@ -212,6 +260,7 @@ export async function DeleteArticleAction(formData: FormData) {
 
     revalidatePath(`/dashboard/sites/${post.siteId}`);
     revalidatePath(`/dashboard/sites/${post.siteId}/blog`);
+    revalidatePath("/dashboard");
 
     return redirect(`/dashboard/sites/${post.siteId}`);
 }

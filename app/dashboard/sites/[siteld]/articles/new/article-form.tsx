@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { getInputProps, getTextareaProps, useForm } from "@conform-to/react";
 import { parseWithZod } from "@conform-to/zod/v4";
-import { Save } from "lucide-react";
+import { Send, Save } from "lucide-react";
 import { useActionState } from "react";
 
 export function ArticleForm({ siteId }: { siteId: string }) {
@@ -68,6 +68,25 @@ export function ArticleForm({ siteId }: { siteId: string }) {
                 />
                 <p className="text-sm text-red-500">{fields.articleContent.errors}</p>
             </div>
+
+            <label className="flex items-start gap-3 rounded-lg border border-slate-200 bg-slate-50 p-4">
+                <input
+                    name={fields.published.name}
+                    id={fields.published.id}
+                    type="checkbox"
+                    className="mt-1 size-4 rounded border-slate-300"
+                />
+                <span>
+                    <span className="flex items-center gap-2 text-sm font-semibold text-slate-950">
+                        <Send className="size-4 text-blue-600" />
+                        Publish now
+                    </span>
+                    <span className="mt-1 block text-sm leading-5 text-slate-500">
+                        Turn this on to show the article in the blog and dashboard published list.
+                    </span>
+                    <span className="mt-1 block text-sm text-red-500">{fields.published.errors}</span>
+                </span>
+            </label>
 
             <div className="flex justify-end">
                 <Button type="submit" className="h-10 gap-2 bg-blue-600 px-5 text-white hover:bg-blue-700">

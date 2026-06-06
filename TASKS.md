@@ -28,37 +28,34 @@
 
 ## 💰 Payments
 
-* [ ] Setup Stripe account
-* [ ] Configure Stripe API keys
-* [ ] Create subscription plans
-* [ ] Implement checkout flow
-* [ ] Handle successful payments
-* [ ] Configure Stripe Webhooks
-* [ ] Test subscription lifecycle
+* [x] Setup Stripe account
+* [x] Configure Stripe API keys
+* [x] Create subscription plans
+* [x] Implement checkout flow
+* [x] Handle successful payments
+* [x] Configure Stripe Webhooks
+* [x] Test subscription lifecycle
 
 ## 🗂️ File Uploads
 
-* [ ] Install UploadThing
-* [ ] Configure file upload routes
+* [x] Implement file upload API
 * [x] Implement file upload UI
 * [x] Validate uploaded files
 
 ## ✅ Validation
 
 * [x] Setup Zod validation schemas
-* [ ] Integrate Conform forms
-* [ ] Add server-side validation
-* [ ] Implement unique subdirectory validation
+* [x] Integrate Conform forms
+* [x] Add server-side validation
+* [x] Implement unique subdirectory validation
 
 ## 🎨 User Interface
 
 * [ ] Create landing page
 * [x] Design dashboard layout
-* [ ] Build authentication pages
-* [ ] Create account settings page
-* [ ] Add loading states
+* [x] Add loading states
 * [x] Add error handling pages
-* [ ] Improve mobile responsiveness
+
 
 ## 🧪 Testing
 
@@ -80,4 +77,4 @@
 * [x] Create README.md
 * [x] Add installation guide
 * [x] Document API routes
-* [ ] Create deployment guide
+

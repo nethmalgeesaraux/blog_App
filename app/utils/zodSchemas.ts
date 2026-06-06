@@ -11,4 +11,5 @@ export const articleSchema = z.object({
   smallDescription: z.string().min(1).max(180),
   image: z.string().trim().optional(),
   articleContent: z.string().min(1),
+  published: z.preprocess((value) => value === "on" || value === "true", z.boolean()),
 });
