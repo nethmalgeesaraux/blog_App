@@ -1,3 +1,4 @@
+import { DeleteArticleAction } from "@/app/actions";
 import { prisma } from "@/app/utils/db";
 import { Button } from "@/components/ui/button";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
@@ -7,7 +8,9 @@ import {
     FileText,
     ImageIcon,
     Newspaper,
+    Pencil,
     Settings,
+    Trash2,
 } from "lucide-react";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
@@ -196,11 +199,29 @@ export default async function SiteldRoute({
                                     </p>
                                 </div>
 
-                                <Button asChild variant="outline" className="w-full sm:w-auto">
-                                    <Link href={`/dashboard/sites/${siteld}/blog#${post.slug}`}>
-                                        View
-                                    </Link>
-                                </Button>
+                                <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row">
+                                    <Button asChild variant="outline" className="w-full sm:w-auto">
+                                        <Link href={`/dashboard/sites/${siteld}/blog#${post.slug}`}>
+                                            View
+                                        </Link>
+                                    </Button>
+
+                                    <Button asChild variant="outline" className="w-full gap-2 sm:w-auto">
+                                        <Link href={`/dashboard/sites/${siteld}/articles/${post.id}/edit`}>
+                                            <Pencil className="size-4" />
+                                            Edit
+                                        </Link>
+                                    </Button>
+
+                                    <form action={DeleteArticleAction}>
+                                        <input type="hidden" name="siteId" value={siteld} />
+                                        <input type="hidden" name="articleId" value={post.id} />
+                                        <Button type="submit" variant="destructive" className="w-full gap-2 sm:w-auto">
+                                            <Trash2 className="size-4" />
+                                            Delete
+                                        </Button>
+                                    </form>
+                                </div>
                             </article>
                         ))}
                     </div>
