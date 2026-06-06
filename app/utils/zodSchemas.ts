@@ -5,3 +5,10 @@ export const siteSchema = z.object({
   description: z.string().min(1).max(150),
   subdirectory: z.string().min(1).max(40),
 });
+
+export const articleSchema = z.object({
+  title: z.string().min(1).max(80),
+  smallDescription: z.string().min(1).max(180),
+  image: z.string().trim().optional(),
+  articleContent: z.string().min(1),
+});

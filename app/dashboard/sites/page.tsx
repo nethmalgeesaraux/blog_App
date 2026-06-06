@@ -48,25 +48,26 @@ export default async function SitesRoute() {
 
             <br />
 
-            <div className="flex flex-col items-center justify-center rounded-md border border-dashed p-8 text-center animate-in fade-in-50">
-                <div className="flex size-20 items-center justify-center rounded-full bg-blue-600">
-                    <FileIcon className="size-10 text-white" />
+            {data.length === 0 && (
+                <div className="flex flex-col items-center justify-center rounded-md border border-dashed p-8 text-center animate-in fade-in-50">
+                    <div className="flex size-20 items-center justify-center rounded-full bg-blue-600">
+                        <FileIcon className="size-10 text-white" />
+                    </div>
+                    <h2 className="mt-6 text-xl font-semibold">
+                        You do not have any sites created
+                    </h2>
+                    <p className="mb-8 mt-2 text-center text-sm leading-tight text-muted-foreground max-w-sm mx-auto">
+                        Create your first site so your articles have a home in the dashboard.
+                    </p>
+
+                    <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white">
+                        <Link href="/dashboard/sites/new">
+                            <PlusCircle className="mr-3 size-5 " /> Create Site
+                        </Link>
+                    </Button>
+
                 </div>
-                <h2 className="mt-6 text-xl font-semibold">
-                    You dont have any Sites created
-                </h2>
-                <p className="mb-8 mt-2 text-center text-sm leading-tight text-muted-foreground max-w-sm mx-auto">
-                    You currently dont have any Sites. Please create some so that you can
-                    see them right here!
-                </p>
-
-                <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white">
-                    <Link href="/dashboard/sites/new">
-                        <PlusCircle className="mr-3 size-5 " /> Create Site
-                    </Link>
-                </Button>
-
-            </div>
+            )}
 
             {data.length > 0 && (
                 <div className="mt-8 grid gap-6 px-4 sm:grid-cols-2 lg:grid-cols-3">

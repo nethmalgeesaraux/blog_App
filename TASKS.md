@@ -40,12 +40,12 @@
 
 * [ ] Install UploadThing
 * [ ] Configure file upload routes
-* [ ] Implement file upload UI
-* [ ] Validate uploaded files
+* [x] Implement file upload UI
+* [x] Validate uploaded files
 
 ## ✅ Validation
 
-* [ ] Setup Zod validation schemas
+* [x] Setup Zod validation schemas
 * [ ] Integrate Conform forms
 * [ ] Add server-side validation
 * [ ] Implement unique subdirectory validation
@@ -62,9 +62,9 @@
 
 ## 🧪 Testing
 
-* [ ] Test authentication flows
+* [x] Test authentication flows
 * [ ] Test payment processing
-* [ ] Test database operations
+* [x] Test database operations
 * [ ] Test file uploads
 * [ ] Perform end-to-end testing
 

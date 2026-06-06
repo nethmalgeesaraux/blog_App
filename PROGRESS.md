@@ -63,9 +63,25 @@ https://www.tldraw.com/f/DjbmaSaiyqGM6VTV_rZX1?d=v-1139.506.2804.1629.page -->
 - Implement data protection and privacy features
 
 **Challenges:**
-- None
+-connet db
 
 **Status:** 
 - Authentication and user management features are complete.
+
+
+
+### Day 4: Friday, June 06
+
+**Completed:**
+
+
+**Next Steps:**
+
+
+**Challenges:**
+- None
+
+**Status:** 
+
 
 
